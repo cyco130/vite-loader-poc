@@ -1,0 +1,18 @@
+{
+  "name": "vite-loader",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "NODE_OPTIONS=\"$NODE_OPTIONS --require ./suppress-warnings.cjs --loader ./loader.js\" vite serve",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --ssr --outDir dist/server",
+    "start": "node dist/server/entry-server.js"
+  },
+  "dependencies": {
+    "@cyco130/vite": "^4.0.1",
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
